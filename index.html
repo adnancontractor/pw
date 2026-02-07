@@ -33,6 +33,17 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 .blog-item .date{font-family:var(--mono);font-size:.75rem;color:var(--text-secondary);min-width:80px;padding-top:.15rem}
 .blog-item h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;line-height:1.35;margin-bottom:.4rem}
 .blog-item .excerpt{font-size:.875rem;color:var(--text-secondary);line-height:1.65}
+
+/* PROJECTS & PUBLICATIONS */
+.projects{padding:3rem 0 4rem}
+.projects h2{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--text-secondary);margin-bottom:2rem}
+.project-list{display:flex;flex-direction:column}
+.project-item{padding:1.5rem 0;border-top:1px solid var(--border)}
+.project-item:last-child{border-bottom:1px solid var(--border)}
+.project-meta{font-family:var(--mono);font-size:.75rem;color:var(--text-secondary);margin-bottom:.35rem;letter-spacing:.01em}
+.project-item h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;line-height:1.35;margin-bottom:.5rem}
+.project-item p{font-size:.9rem;color:var(--text-secondary);line-height:1.7;max-width:720px}
+
 .contact{padding:3rem 0 5rem}.contact p{font-size:.9rem;color:var(--text-secondary)}
 .contact a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
 .contact a:hover{border-color:var(--text)}
@@ -60,8 +71,13 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
 <body>
 <nav>
   <a href="#" class="name" onclick="showMain()">Adnan Contractor</a>
-  <div class="links"><a href="#about" onclick="showMain()">About</a><a href="#writing" onclick="showMain()">Writing</a></div>
+  <div class="links">
+    <a href="#about" onclick="showMain()">About</a>
+    <a href="#writing" onclick="showMain()">Writing</a>
+    <a href="#projects" onclick="showMain()">Projects</a>
+  </div>
 </nav>
+
 <div id="main"><div class="container">
   <div class="hero">
     <h1>Adnan Contractor</h1>
@@ -77,6 +93,7 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
     </div>
   </div>
   <hr>
+
   <div class="blog" id="writing">
     <h2>Writing</h2>
     <div class="blog-list">
@@ -89,7 +106,115 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
       <a class="blog-item" onclick="showPost('post7')"><span class="date">Jul 2024</span><div><h3>Expressiveness, Complexity, and the Limits of Preference Elicitation</h3><p class="excerpt">Combinatorial auctions let bidders say more about what they want. But richer languages create harder computational problems. The tradeoff is the central tension in mechanism design.</p></div></a>
     </div>
   </div>
+
   <hr>
+
+  <!-- PROJECTS & PUBLICATIONS -->
+  <div class="projects" id="projects">
+    <h2>Projects &amp; Publications</h2>
+    <div class="project-list">
+
+      <div class="project-item">
+        <div class="project-meta">Signal Processing · Geophysics</div>
+        <h3>Classification Models for Seismic Waveform Analysis</h3>
+        <p>Trained classification models to detect waveform disruptions in seismic time series with a deliberate focus on ultra-low-frequency sensitivity. The work emphasized separating true geophysical structure from instrumentation drift and ambient noise using spectral features, windowed statistics, and robust decision thresholds calibrated to rare-event detection rather than average accuracy.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Market Microstructure · Crypto</div>
+        <h3>Cryptocurrency Arbitrage Strategies</h3>
+        <p>Explored liquidity-based arbitrage across centralized and decentralized venues, including triangular paths and CEX/DEX dislocations where the limiting factor is execution, not quote visibility. The analysis treated arbitrage as a constrained optimization problem under stochastic depth, fees, latency, and slippage, with special attention to when “paper spreads” fail to survive realistic fill assumptions.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Energy Systems · Applied Physics</div>
+        <h3>Directed Thermionic Energy Conversion</h3>
+        <p>Studied thermionic energy conversion in device-level settings where heat removal is the dominant constraint. The project modeled electron emission efficiency alongside cooling pathways and circuit integration, aiming to identify regimes where thermionic generators can be stabilized and made practically useful inside electrical systems rather than treated as isolated lab-scale components.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Machine Learning · Theory</div>
+        <h3>Energy Based Adaptive Routing in Neural Networks</h3>
+        <p>Investigated architectures that route computation adaptively using an energy-based criterion rather than a fixed forward pass. The core idea is to couple representation learning with a routing policy that activates only the subnetworks needed for a given input, pushing toward conditional computation that is both efficient and interpretable under a principled objective.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Quantitative Finance · Derivatives</div>
+        <h3>Exotic Payoff Design: Liquidity Sensitive Stochastic Models</h3>
+        <p>Designed exotic payoff structures that explicitly encode liquidity conditions into valuation and risk, rather than treating execution as an external post-processing step. The work modeled liquidity as a latent or observed state variable interacting with price dynamics, motivating payoffs whose realized performance depends on spread, depth, and market impact regimes.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Complex Systems · Trading</div>
+        <h3>Hierarchical Complexity in Multi-Agent Trading Systems</h3>
+        <p>Studied market behavior as an emergent phenomenon arising from interacting agents operating at multiple time scales. The project focused on hierarchical control and delegation: low-level reactive execution policies interacting with higher-level strategic objectives, and how feedback loops, competition, and information constraints can create non-linear dynamics and regime-like shifts.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Medical Imaging · Deep Learning</div>
+        <h3>Image Resolution of HCC Ultrasound Scans Using Generative Adversarial Networks</h3>
+        <p>Developed an adversarial-learning approach to enhance ultrasound image resolution for hepatocellular carcinoma analysis. The emphasis was on preserving clinically meaningful texture and boundary structure while reducing artifact amplification, positioning GAN-based super-resolution as a practical complement to standard enhancement pipelines.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Plasma Physics · Nuclear Medicine</div>
+        <h3>Modeling of Yttrium-90 and Technetium-99m Production Using Plasma-Based Synthesis</h3>
+        <p>Applied computational physics methods to model plasma-based synthesis routes for medically relevant isotopes, including Y-90 and Tc-99m. The work focused on yield, stability, and energy-efficiency constraints in the synthesis pathway, with motivation tied to reliable isotope production for diagnostics and targeted radiotherapy workflows.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Generative Models · Asset Management</div>
+        <h3>Multi-modal Generative Models for Portfolio Optimization</h3>
+        <p>Built multi-modal generative models intended to support portfolio optimization when historical data is sparse or structurally non-stationary. The approach combines heterogeneous information sources to generate coherent scenario distributions, enabling stress testing, sensitivity analysis, and robust optimization under distributional uncertainty.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">MRI · Medical Imaging</div>
+        <h3>Neural Style Transfer for PC-MRI</h3>
+        <p>Explored neural style transfer to improve the realism and diversity of synthetic PC-MRI data used for segmentation and classification tasks. The goal was to better match scanner- and patient-specific appearance statistics while preserving flow-relevant structure, improving downstream model generalization without requiring costly new labels.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Time Series · Generative Finance</div>
+        <h3>Portfolio Rebalancing with Flow-Based Generative Models</h3>
+        <p>Developed flow-based generative models for synthetic time-series generation across multiple asset classes, using the generated scenarios to supply and stress portfolio rebalancing logic. The project emphasized tail behavior, cross-asset dependency structure, and regime sensitivity so that portfolio tools can be evaluated under realistic distribution shifts rather than a single historical path.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Control Theory · Fusion</div>
+        <h3>Predicting What Happens in a Tokamak with Stochastic Predictive Control</h3>
+        <p>Modeled tokamak behavior through stochastic predictive control, treating regime transitions and measurement noise as first-class constraints. The project framed prediction and stabilization as a receding-horizon control problem, aimed at producing policies that remain robust under partial observability and rapidly changing plasma dynamics.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Macroeconomics · Time Series</div>
+        <h3>Regime Shift Modeling - Recession Risk</h3>
+        <p>Built a regime-shift framework over macro indicators in the FRED database to identify and characterize recession risk as a transition problem rather than a point forecast. The work emphasized state inference, persistence, and leading indicators that behave differently across regimes, with the goal of making “recession probability” a structured, testable object.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Algorithms · Mechanism Design</div>
+        <h3>Specialized Search Algorithms for Combinatorial Auctions</h3>
+        <p>Designed and analyzed specialized search procedures for combinatorial auction winner determination under tight computational budgets. The emphasis was on structure-aware branching and pruning, approximation-aware heuristics, and search strategies that exploit realistic bid languages, targeting practical tractability without sacrificing the expressive power needed in real settings.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Derivatives · Stochastic Processes</div>
+        <h3>Stochastic Correlation in Multi Asset Exotic Options</h3>
+        <p>Studied multi-asset exotic options where correlation is itself stochastic and materially impacts valuation and hedging error. The project focused on modeling correlation as a state variable with its own dynamics, examining how correlation regimes propagate into payoff distribution tails and create risk that cannot be hedged by delta exposure alone.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-meta">Mathematics · Spectral Graph Theory</div>
+        <h3>Uniformization Problems in Spectral Graph Theory</h3>
+        <p>Explored uniformization-type questions on combinatorial and quantum graphs, with a particular focus on estimating extremal adjacency spectral gaps. The work investigated double-kite graph families as a testbed for bounding gap behavior, combining analytical reasoning with computational estimation to map where “minimum gap” constructions plausibly live.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
   <div class="contact" id="contact"><p><a href="mailto:adnan@onechronos.com">adnan@onechronos.com</a></p></div>
 </div></div>
 
@@ -422,8 +547,6 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
 
 <p>In equilibrium, the informed trader trades at a rate proportional to the gap between the true value and the current price. She trades aggressively when the mispricing is large and cautiously as the price converges to true value. The result is that information is incorporated into prices gradually over the course of the trading session, not all at once. The informed trader "manages" the release of information, stretching it over time to maximize her profit.</p>
 
-<p>This has a direct connection to optimal execution. The informed trader's problem in Kyle's model is structurally identical to the Almgren-Chriss execution problem. In both cases, a trader must split a large desired trade across time, balancing the urgency of completing the trade against the market impact of trading too fast. The difference is in the source of urgency. In Almgren-Chriss, urgency comes from price risk, the volatility of the unaffected price. In Kyle, urgency comes from information decay, the risk that the private information becomes public before the trader can fully exploit it. But the mathematical structure is the same. Both produce trajectories that front-load execution and decay exponentially as the remaining quantity decreases.</p>
-
 <h2>Price Discovery as a Measurement Problem</h2>
 
 <p>Kyle's framework also clarifies what it means to measure price discovery. If the market maker correctly infers the information content of order flow and adjusts the price accordingly, the price converges to the true value over the trading session. The speed of this convergence depends on λ. Higher λ means faster convergence but also higher trading costs for everyone including uninformed traders who move the price simply by expressing their liquidity needs.</p>
@@ -571,8 +694,6 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
 <p>Parkes described the theory of iterative combinatorial auctions in his 2006 monograph. The key advantage of iteration is that it reduces the elicitation burden on bidders. Instead of evaluating exponentially many bundles upfront, bidders only need to evaluate their preferences at the current prices, which is a much simpler cognitive and computational task. The mechanism guides bidders toward the efficient allocation through a sequence of increasingly refined signals about what other participants are willing to pay.</p>
 
 <p>The ascending proxy auction, developed by Ausubel and Milgrom in 2002, is the most studied iterative combinatorial mechanism. It combines the price discovery properties of an ascending auction with the expressiveness of combinatorial bidding. Bidders report their valuations for bundles, and the mechanism iteratively raises prices on over-demanded bundles and computes tentative allocations, converging to an approximately efficient outcome.</p>
-
-<p>In practice, iterative mechanisms are used in the highest-stakes combinatorial auction settings. The FCC spectrum auctions, which have generated hundreds of billions of dollars in revenue, use iterative formats that allow bidders to learn about demand and adjust their strategies over dozens of rounds. The practical success of these auctions is strong evidence that the expressiveness-complexity tradeoff can be navigated in real applications.</p>
 
 <h2>What This Means Outside Auctions</h2>
 
