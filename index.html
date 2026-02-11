@@ -24,15 +24,6 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 .about{padding:3rem 0}.about p{font-size:.975rem;color:var(--text-secondary);margin-bottom:1rem;max-width:640px}
 .skills-row{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.4rem}
 .skills-row span{font-family:var(--mono);font-size:.72rem;padding:.3rem .65rem;border:1px solid var(--border);border-radius:3px;color:var(--text-secondary)}
-.blog{padding:3rem 0 4rem}
-.blog h2{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--text-secondary);margin-bottom:2rem}
-.blog-list{display:flex;flex-direction:column}
-.blog-item{display:flex;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--border);cursor:pointer;text-decoration:none;color:inherit;transition:background .15s}
-.blog-item:last-child{border-bottom:1px solid var(--border)}
-.blog-item:hover{background:var(--surface);margin:0 -1rem;padding:1.5rem 1rem}
-.blog-item .date{font-family:var(--mono);font-size:.75rem;color:var(--text-secondary);min-width:80px;padding-top:.15rem}
-.blog-item h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;line-height:1.35;margin-bottom:.4rem}
-.blog-item .excerpt{font-size:.875rem;color:var(--text-secondary);line-height:1.65}
 
 /* PROJECTS & PUBLICATIONS */
 .projects{padding:3rem 0 4rem}
@@ -47,34 +38,17 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 .contact{padding:3rem 0 5rem}.contact p{font-size:.9rem;color:var(--text-secondary)}
 .contact a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
 .contact a:hover{border-color:var(--text)}
-.post{display:none;max-width:860px;margin:0 auto;padding:2rem 2rem 6rem}
-.post.active{display:block}
-.post .back{font-family:var(--mono);font-size:.8rem;color:var(--text-secondary);text-decoration:none;cursor:pointer;display:inline-block;margin-bottom:2.5rem}
-.post .back:hover{color:var(--text)}
-.post .meta{font-family:var(--mono);font-size:.75rem;color:var(--text-secondary);margin-bottom:.75rem}
-.post h1{font-family:var(--serif);font-size:clamp(1.75rem,4vw,2.5rem);font-weight:400;line-height:1.2;letter-spacing:-.02em;margin-bottom:2.5rem;max-width:640px}
-.post .body{max-width:640px}
-.post .body h2{font-family:var(--serif);font-size:1.4rem;font-weight:400;margin:2.75rem 0 .75rem}
-.post .body p{font-size:.95rem;color:var(--text-secondary);margin-bottom:1.15rem;line-height:1.8}
-.post .body p em{font-family:var(--serif);font-style:italic}
-.post .body code{font-family:var(--mono);font-size:.83em;background:var(--surface);padding:.12rem .35rem;border-radius:2px}
-.post .body pre{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1.25rem;overflow-x:auto;margin:1.5rem 0;font-family:var(--mono);font-size:.82rem;line-height:1.65;color:var(--text)}
-.post .body .refs{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border)}
-.post .body .refs h3{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.75rem;font-weight:500}
-.post .body .refs ol{list-style:decimal;padding-left:1.25rem}
-.post .body .refs li{font-size:.82rem;color:var(--text-secondary);margin-bottom:.4rem;line-height:1.55}
 #main{display:block}#main.hidden{display:none}
 footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondary)}
-@media(max-width:640px){nav,.container{padding-left:1.25rem;padding-right:1.25rem}.hero h1{font-size:2.1rem}.blog-item{flex-direction:column;gap:.25rem}.post{padding:1.5rem 1.25rem 4rem}}
+@media(max-width:640px){nav,.container{padding-left:1.25rem;padding-right:1.25rem}.hero h1{font-size:2.1rem}}
 </style>
 </head>
 <body>
 <nav>
-  <a href="#" class="name" onclick="showMain()">Adnan Contractor</a>
+  <a href="#" class="name">Adnan Contractor</a>
   <div class="links">
-    <a href="#about" onclick="showMain()">About</a>
-    <a href="#writing" onclick="showMain()">Writing</a>
-    <a href="#projects" onclick="showMain()">Projects</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
   </div>
 </nav>
 
@@ -94,21 +68,6 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
   </div>
   <hr>
 
-  <div class="blog" id="writing">
-    <h2>Writing</h2>
-    <div class="blog-list">
-      <a class="blog-item" onclick="showPost('post1')"><span class="date">Jan 2025</span><div><h3>The Almgren-Chriss Framework and Its Discontents</h3><p class="excerpt">The foundational optimal execution model is elegant, tractable, and wrong in specific ways that have driven two decades of productive research. A critical examination of where the theory meets the market.</p></div></a>
-      <a class="blog-item" onclick="showPost('post2')"><span class="date">Dec 2024</span><div><h3>When Randomization Breaks</h3><p class="excerpt">A survey of the modern causal inference toolkit for settings where A/B testing is contaminated by interference, and why the identifying assumptions matter more than the estimator.</p></div></a>
-      <a class="blog-item" onclick="showPost('post3')"><span class="date">Nov 2024</span><div><h3>Discrete Time, Discrete Auctions</h3><p class="excerpt">The theoretical case for why periodic batch auctions are not just a market design improvement but the natural structure that optimal execution theory was always implicitly assuming.</p></div></a>
-      <a class="blog-item" onclick="showPost('post4')"><span class="date">Oct 2024</span><div><h3>A Practitioner's Guide to Not Lying with Standard Errors</h3><p class="excerpt">Why naive pooling of hierarchical data produces misleadingly narrow confidence intervals, and what honest uncertainty propagation looks like in practice.</p></div></a>
-      <a class="blog-item" onclick="showPost('post5')"><span class="date">Sep 2024</span><div><h3>Kyle's Lambda and the Meaning of Price Discovery</h3><p class="excerpt">The 1985 model that gave us the language for thinking about informed trading is also a lesson in how much conceptual weight a single parameter can bear.</p></div></a>
-      <a class="blog-item" onclick="showPost('post6')"><span class="date">Aug 2024</span><div><h3>The Counterfactual Problem in Execution Quality</h3><p class="excerpt">You can never observe the price you would have gotten if you had traded differently. This is the fundamental problem of execution measurement, and most of the industry ignores it.</p></div></a>
-      <a class="blog-item" onclick="showPost('post7')"><span class="date">Jul 2024</span><div><h3>Expressiveness, Complexity, and the Limits of Preference Elicitation</h3><p class="excerpt">Combinatorial auctions let bidders say more about what they want. But richer languages create harder computational problems. The tradeoff is the central tension in mechanism design.</p></div></a>
-    </div>
-  </div>
-
-  <hr>
-
   <!-- PROJECTS & PUBLICATIONS -->
   <div class="projects" id="projects">
     <h2>Projects &amp; Publications</h2>
@@ -123,7 +82,7 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
       <div class="project-item">
         <div class="project-meta">Market Microstructure · Crypto</div>
         <h3>Cryptocurrency Arbitrage Strategies</h3>
-        <p>Explored liquidity-based arbitrage across centralized and decentralized venues, including triangular paths and CEX/DEX dislocations where the limiting factor is execution, not quote visibility. The analysis treated arbitrage as a constrained optimization problem under stochastic depth, fees, latency, and slippage, with special attention to when “paper spreads” fail to survive realistic fill assumptions.</p>
+        <p>Explored liquidity-based arbitrage across centralized and decentralized venues, including triangular paths and CEX/DEX dislocations where the limiting factor is execution, not quote visibility. The analysis treated arbitrage as a constrained optimization problem under stochastic depth, fees, latency, and slippage, with special attention to when "paper spreads" fail to survive realistic fill assumptions.</p>
       </div>
 
       <div class="project-item">
@@ -189,7 +148,7 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
       <div class="project-item">
         <div class="project-meta">Macroeconomics · Time Series</div>
         <h3>Regime Shift Modeling - Recession Risk</h3>
-        <p>Built a regime-shift framework over macro indicators in the FRED database to identify and characterize recession risk as a transition problem rather than a point forecast. The work emphasized state inference, persistence, and leading indicators that behave differently across regimes, with the goal of making “recession probability” a structured, testable object.</p>
+        <p>Built a regime-shift framework over macro indicators in the FRED database to identify and characterize recession risk as a transition problem rather than a point forecast. The work emphasized state inference, persistence, and leading indicators that behave differently across regimes, with the goal of making "recession probability" a structured, testable object.</p>
       </div>
 
       <div class="project-item">
@@ -207,7 +166,7 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
       <div class="project-item">
         <div class="project-meta">Mathematics · Spectral Graph Theory</div>
         <h3>Uniformization Problems in Spectral Graph Theory</h3>
-        <p>Explored uniformization-type questions on combinatorial and quantum graphs, with a particular focus on estimating extremal adjacency spectral gaps. The work investigated double-kite graph families as a testbed for bounding gap behavior, combining analytical reasoning with computational estimation to map where “minimum gap” constructions plausibly live.</p>
+        <p>Explored uniformization-type questions on combinatorial and quantum graphs, with a particular focus on estimating extremal adjacency spectral gaps. The work investigated double-kite graph families as a testbed for bounding gap behavior, combining analytical reasoning with computational estimation to map where "minimum gap" constructions plausibly live.</p>
       </div>
 
     </div>
@@ -218,524 +177,6 @@ footer{padding:2rem;text-align:center;font-size:.75rem;color:var(--text-secondar
   <div class="contact" id="contact"><p><a href="mailto:adnan@onechronos.com">adnan@onechronos.com</a></p></div>
 </div></div>
 
-<!-- POST 1 -->
-<article class="post" id="post1">
-<span class="back" onclick="showMain()">← Back</span>
-<div class="meta">January 2025</div>
-<h1>The Almgren-Chriss Framework and Its Discontents</h1>
-<div class="body">
-
-<p>In 2001, Robert Almgren and Neil Chriss published what would become the foundational paper in optimal execution theory. Their model asked a clean question. Given that you must liquidate X shares before time T, how should you schedule your trades to minimize a combination of expected cost and execution risk? The answer, a closed-form trajectory involving hyperbolic sine functions, was elegant, tractable, and immediately useful. It launched an entire subfield. But twenty-four years later, the model's assumptions have become as instructive in their failures as in their successes. Understanding where Almgren-Chriss breaks is, I think, one of the more productive exercises available to someone working in market microstructure.</p>
-
-<p>I keep coming back to this paper because it illustrates something important about quantitative modeling in general. A model can be wrong about the details and still permanently restructure how an entire field thinks. The Almgren-Chriss decomposition of execution cost into a risk term and an impact term, and the formalization of the tradeoff between them via a risk aversion parameter, are ideas that persist even in frameworks that reject every other assumption of the original paper. That is the mark of a genuinely good model. It provides the vocabulary, not just the answer.</p>
-
-<h2>The Model</h2>
-
-<p>The setup is deceptively simple. You hold X shares of a single asset and must liquidate them over N discrete time periods of length τ. At each step k, you sell n_k shares. The unaffected stock price follows a discrete arithmetic random walk with volatility σ. Your selling exerts two kinds of price pressure.</p>
-
-<p>Permanent impact shifts the equilibrium price by an amount proportional to how fast you trade. If you sell n_k shares in a period of length τ, the equilibrium price drops by γ times n_k over τ, where γ is a constant. This impact persists for the entire remaining execution. It represents the information content of the trade being impounded into the price. The market learns something from your selling, and that information permanently changes what the stock is worth.</p>
-
-<p>Temporary impact adds a transient cost on top of the permanent shift. Each trade displaces the order book, meaning the actual price you receive is worse than the equilibrium price by an amount that depends on your trading rate plus a fixed cost representing the bid-ask spread and fees. Unlike permanent impact, this displacement vanishes immediately after the trade. The order book snaps back.</p>
-
-<p>The trader's problem is to choose the trajectory, the sequence of shares remaining at each time step, to minimize expected cost plus a risk penalty scaled by a parameter λ. Almgren and Chriss showed that the optimal trajectory takes a specific functional form. When the trader is risk-neutral (λ equals zero), the optimal strategy is to trade at a constant rate, spreading the execution uniformly across all periods, which is essentially a TWAP schedule. When the trader is infinitely risk-averse, the optimal strategy is to sell everything immediately, eliminating all exposure to future price moves at the cost of maximum market impact. For intermediate risk aversion, the solution interpolates smoothly between these two extremes, front-loading the execution to reduce inventory risk while accepting higher impact costs early in the schedule.</p>
-
-<p>The beauty of this result is that it depends on a single parameter κ, which Almgren and Chriss called the "urgency" of the execution. It captures the ratio of risk aversion times volatility to temporary impact cost, and it governs how aggressively the schedule is front-loaded. A large κ means the trader is very worried about price risk relative to impact cost, so they trade fast. A small κ means they are patient. The entire space of optimal strategies is parameterized by this one number.</p>
-
-<h2>Where the Assumptions Fail</h2>
-
-<p>Every model earns its tractability through assumptions, and the productive question is always which assumptions bind.</p>
-
-<p>The first and most scrutinized assumption is that permanent impact is linear in the trading rate. Huberman and Stanzl showed in 2004 that linearity is actually a no-arbitrage condition. If permanent impact were nonlinear, there would exist round-trip trading strategies, buying and then selling the same quantity, that generate positive expected profit by exploiting the asymmetry between fast and slow trading. Buy fast when per-share impact is low, sell slowly when per-share impact is also low, and pocket the gap. Linearity rules this out. So the assumption is not arbitrary. It is a requirement for internal consistency.</p>
-
-<p>But the empirical evidence is more nuanced. The celebrated square-root law, documented by Bouchaud, Gefen, Potters, and Wyart in 2004 and confirmed by Almgren and others in 2005, states that the total price impact of a large "metaorder," the full sequence of child orders constituting a single execution decision, scales as the square root of the total volume traded, not linearly. This law holds with remarkable universality across equities, futures, and options markets, and across decades of data. The tension between the theoretical requirement for linear marginal impact and the empirical observation of concave aggregate impact is one of the deep puzzles in market microstructure. Whether the square-root law emerges as a consequence of optimal execution under linear temporary impact, where traders split orders in a way that generates aggregate concave scaling, or whether it reflects genuinely nonlinear marginal impact, remains an active and unresolved research question.</p>
-
-<p>Gatheral showed in 2010 that the answer matters for the shape of optimal trajectories. If the temporary impact function is truly concave at the margin, meaning each additional share has less incremental impact than the last, then larger orders should be executed more slowly relative to their duration than the linear model predicts. The "characteristic time" of the execution becomes size-dependent, which is a qualitative change from Almgren-Chriss where the trajectory shape is independent of the order size.</p>
-
-<p>The second problematic assumption is that temporary impact vanishes instantly. In the original model, the order book snaps back to its pre-trade state within one period. In reality, recovery from a large market order takes time. The book refills gradually as new limit orders arrive, and the speed of recovery depends on the stock's liquidity, time of day, and the broader market state.</p>
-
-<p>Obizhaeva and Wang proposed a transient impact model in 2013 where the temporary price displacement decays exponentially with a characteristic time ρ. This changes the optimization fundamentally. With instantaneous decay, each child order's impact is independent of previous orders. With transient decay, the order book carries a memory of recent trading, and the cost of the current trade depends on the entire history of the execution. The closed-form elegance of Almgren-Chriss gives way to integral equations and numerical methods.</p>
-
-<p>Bouchaud and collaborators went further, proposing propagator models where the impact of each trade decays as a power law rather than an exponential. Power-law decay implies long memory, meaning the order book never fully forgets your earlier trades, and the resulting optimization problem is harder still. Whether impact decays exponentially or as a power law is an empirical question that different datasets answer differently, which suggests the true decay kernel may depend on the asset, the market conditions, and the time horizon in ways that no single parametric model can capture.</p>
-
-<p>The third assumption is that liquidity is constant. The impact parameters ε, η, γ and the volatility σ do not change over the execution horizon. In practice, liquidity is stochastic and exhibits strong intraday seasonality. Spreads widen at the open and close. Depth varies with news flow. The arrival rate of offsetting orders depends on the broader market state.</p>
-
-<p>Almgren extended the framework to incorporate stochastic liquidity in 2012, allowing the temporary impact parameter to follow its own stochastic process. This introduces a new source of risk, liquidity risk, that is distinct from price risk. The optimal strategy in this setting conditions on the current state of liquidity, trading more aggressively when liquidity is abundant and patiently when it is scarce. The solution requires dynamic programming, and the closed form is gone.</p>
-
-<h2>The Deeper Question</h2>
-
-<p>There is a subtlety in the word "optimal" that is easy to overlook. Almgren-Chriss optimizes over deterministic trajectories. The trader commits to a schedule at time zero and follows it regardless of what happens. This is optimal within the class of deterministic strategies, but it is not optimal in general. An adaptive strategy, one that conditions on observed price and liquidity, can strictly dominate any deterministic strategy because it can exploit favorable realizations and avoid unfavorable ones.</p>
-
-<p>The gap between the best deterministic strategy and the best adaptive strategy depends on how much information is revealed during execution. Bertsimas and Lo formulated the fully adaptive problem using dynamic programming in 1998, but the resulting strategies are path-dependent, hard to interpret, and difficult to benchmark. This creates a genuine tension in practice. Closed-form strategies are transparent, auditable, and easy to communicate to clients and regulators. Adaptive strategies are superior in expectation but opaque and difficult to explain when they produce unexpected outcomes.</p>
-
-<p>The choice between them is not purely technical. It is a question about the governance of execution, the legibility of decision-making to external observers, and the tolerance for unexplained variation in outcomes. This is the kind of question that quantitative researchers do not always take seriously enough, because it lives at the boundary between mathematics and organizational design.</p>
-
-<h2>What Endures</h2>
-
-<p>For all its limitations, the Almgren-Chriss model endures because it asks the right question in the right language. The decomposition of execution cost into risk and impact, the formalization of the tradeoff between them, the insight that optimal trajectories interpolate between immediate execution and uniform execution along a one-parameter family governed by urgency, these are permanent contributions to how we think about trading. The model's assumptions are wrong, as all useful models' assumptions are wrong, but they are wrong in specific and measurable ways that have structured two decades of research. That is what a good framework does. It does not provide the final answer. It organizes the conversation in a way that makes progress possible.</p>
-
-<div class="refs">
-<h3>References</h3>
-<ol>
-<li>Almgren, R. and Chriss, N. (2001). "Optimal Execution of Portfolio Transactions." <em>Journal of Risk</em>, 3, 5–40.</li>
-<li>Almgren, R. (2003). "Optimal Execution with Nonlinear Impact Functions and Trading-Enhanced Risk." <em>Applied Mathematical Finance</em>, 10, 1–18.</li>
-<li>Almgren, R., Thum, C., Hauptmann, E., and Li, H. (2005). "Direct Estimation of Equity Market Impact." <em>Risk</em>, 18(7), 58–62.</li>
-<li>Almgren, R. (2012). "Optimal Trading with Stochastic Liquidity and Volatility." <em>SIAM Journal on Financial Mathematics</em>, 3(1), 163–181.</li>
-<li>Bertsimas, D. and Lo, A. W. (1998). "Optimal Control of Execution Costs." <em>Journal of Financial Markets</em>, 1(1), 1–50.</li>
-<li>Bouchaud, J.-P., Gefen, Y., Potters, M., and Wyart, M. (2004). "Fluctuations and Response in Financial Markets." <em>Quantitative Finance</em>, 4(2), 176–190.</li>
-<li>Gatheral, J. (2010). "No-Dynamic-Arbitrage and Market Impact." <em>Quantitative Finance</em>, 10(7), 749–759.</li>
-<li>Huberman, G. and Stanzl, W. (2004). "Price Manipulation and Quasi-Arbitrage." <em>Econometrica</em>, 72(4), 1247–1275.</li>
-<li>Kyle, A. S. (1985). "Continuous Auctions and Insider Trading." <em>Econometrica</em>, 53(6), 1315–1335.</li>
-<li>Obizhaeva, A. A. and Wang, J. (2013). "Optimal Trading Strategy and Supply/Demand Dynamics." <em>Journal of Financial Markets</em>, 16(1), 1–32.</li>
-</ol>
-</div>
-</div>
-</article>
-
-<!-- POST 2 -->
-<article class="post" id="post2">
-<span class="back" onclick="showMain()">← Back</span>
-<div class="meta">December 2024</div>
-<h1>When Randomization Breaks</h1>
-<div class="body">
-
-<p>The randomized controlled trial is the methodological ideal because randomization eliminates confounding by design. If treatment is assigned independently of potential outcomes, any difference between treatment and control groups is attributable to the treatment. This is the core insight of the Rubin causal model, and it has powered decades of progress in medicine, economics, and technology. A/B testing is just randomization applied to product decisions.</p>
-
-<p>But the ideal breaks in precisely the settings where causal knowledge matters most. I am writing about this because I think the quasi-experimental methods that fill the gap are among the most important tools available to a quantitative researcher, and because the identifying assumptions each method requires are where the real intellectual work lives. The statistical machinery is relatively standard. The assumptions are where you earn or lose credibility.</p>
-
-<h2>Why Randomization Fails</h2>
-
-<p>The Stable Unit Treatment Value Assumption, SUTVA, requires that each unit's outcome depends only on its own treatment assignment. In two-sided platforms, marketplaces, and any system where participants interact, SUTVA is almost always violated. This violation is called interference, and it is the primary reason standard A/B tests produce biased estimates in network settings.</p>
-
-<p>Consider a marketplace that introduces a new matching algorithm. Randomizing which buyers see the new algorithm does not isolate the effect cleanly, because each buyer's experience depends on the pool of sellers they are matched with, and the seller pool is shared with the control group. If treated buyers get better matches, control buyers may get worse ones, not because the algorithm harms them but because the treated group has consumed the best matches first. The measured treatment effect conflates the direct effect of the treatment with the indirect effect of treatment-induced changes in the shared environment.</p>
-
-<p>The interference problem is fundamental, not technical. It arises whenever units compete for shared resources (marketplace liquidity, ad impressions, compute capacity), whenever they influence each other's behavior (social networks, trading venues), or whenever the treatment changes the environment in ways that affect everyone (platform-wide policy changes, infrastructure upgrades).</p>
-
-<h2>Difference-in-Differences</h2>
-
-<p>Difference-in-differences compares the change in outcomes over time between a treated group and an untreated group, under the assumption that both groups would have followed parallel trends in the absence of treatment. The treatment effect is the difference in the before-after change between the two groups. This is a weaker assumption than requiring the two groups to have the same level of the outcome. It only requires them to have the same trend.</p>
-
-<p>The classical two-period, two-group DiD is straightforward, but modern applications are often more complex. Staggered adoption, where different units adopt the treatment at different times, introduces subtleties that the classical estimator handles badly. Goodman-Bacon showed in 2021 that the standard two-way fixed effects regression, long used as the default estimator for staggered DiD, decomposes into a weighted average of all possible two-by-two DiD comparisons. Some of those comparisons use already-treated units as controls. These "forbidden comparisons" introduce bias whenever treatment effects vary over time, which they almost always do. The resulting estimates can be wrong in sign, not just magnitude.</p>
-
-<p>This discovery set off an explosion of methodological work. Callaway and Sant'Anna proposed a group-time estimator that avoids forbidden comparisons by restricting attention to clean control groups. Sun and Abraham developed an interaction-weighted estimator that re-weights the regression to eliminate bias. De Chaisemartin and D'Haultfoeuille proposed a robust estimator with similar properties. All share a key insight. The problem with two-way fixed effects is not the regression framework itself but the implicit weighting scheme that gives negative weight to some treatment effects, causing them to enter the estimate with the wrong sign.</p>
-
-<p>For practitioners, the takeaway is concrete. If you are using DiD with staggered adoption, do not blindly run a two-way fixed effects regression. Use one of the modern robust estimators, and always present the event-study plot, treatment effects by time-since-adoption, to assess whether the parallel trends assumption is plausible in the pre-treatment data. The event study is not a formal test of parallel trends. It cannot rule out differential trends that emerge only after treatment. But it is the best diagnostic available, and presenting it signals that you understand what your estimate depends on.</p>
-
-<h2>Synthetic Controls</h2>
-
-<p>When the treated unit is a single entity, a country, a firm, a platform, there is no within-entity randomization and typically no clean control group. The synthetic control method, developed by Abadie and Gardeazabal in 2003 and refined by Abadie, Diamond, and Hainmueller in 2010, addresses this by constructing a counterfactual from a weighted combination of untreated units. The weights are chosen so that the weighted average closely matches the treated unit's pre-treatment trajectory.</p>
-
-<p>The method works by finding a convex combination of untreated donor units that reproduces the treated unit's outcome path before the intervention. The constraints that the weights must be non-negative and sum to one prevent extrapolation, ensuring the synthetic control is an actual weighted average of real units rather than an artifact of extrapolation beyond the data. After the intervention, the divergence between the treated unit's actual outcome and the synthetic control's outcome is the estimated treatment effect.</p>
-
-<p>Inference is the hard part. With a single treated unit, classical standard errors do not apply. Abadie et al. proposed placebo tests. Re-estimate the synthetic control as if each donor unit were the treated unit, and compare the treated unit's estimated effect to the distribution of placebo effects. If the treated effect is extreme relative to the placebo distribution, it is unlikely to reflect chance alone.</p>
-
-<p>More recent work has refined inference substantially. Chernozhukov, Wüthrich, and Zhu developed exact conformal inference methods in 2021 that provide valid p-values under minimal assumptions. Li and Sonnier showed in 2023 that standard bootstrap procedures for synthetic controls can produce severely biased confidence intervals, a result with immediate practical consequences for anyone using these methods for business decisions.</p>
-
-<p>Perhaps the most important recent development is synthetic difference-in-differences, proposed by Arkhangelsky, Athey, Hirshberg, Imbens, and Wager in 2021. SDID hybridizes the two approaches, using both unit weights (like synthetic controls) and time weights (like DiD) to construct the counterfactual. It inherits the best properties of both methods. It does not require parallel trends, as synthetic controls do not, and it does not require perfect pre-treatment fit, as DiD does not. In settings where both methods work, SDID is at least as efficient as either. In settings where one fails, SDID can still succeed.</p>
-
-<h2>Causal Forests</h2>
-
-<p>The methods above estimate average treatment effects. But in most practical settings, the treatment effect varies across units. A new feature helps some users and hurts others. A price change matters more for some segments than others. Causal forests, developed by Athey and Wager in 2018, estimate conditional average treatment effects using a modified random forest algorithm.</p>
-
-<p>The key modification is in the splitting criterion. In a standard random forest for prediction, the algorithm splits nodes to minimize prediction error. In a causal forest, the algorithm splits nodes to maximize heterogeneity in the treatment effect. It finds the covariate values that best separate units with large effects from units with small or negative effects. The resulting tree partitions the covariate space into regions with different estimated treatment effects, and the forest averages over many trees to produce a smooth estimate.</p>
-
-<p>Wager and Athey proved that causal forest estimates are asymptotically normal, which means you can construct valid confidence intervals for subgroup treatment effects without the multiple-testing problems that plague ad-hoc subgroup analyses. This is a substantial achievement. It means you can let the algorithm discover which subgroups have the largest effects, and still make valid inferences about those effects, as long as you use the "honesty" property, meaning the sample used for estimation is different from the sample used to determine the tree structure.</p>
-
-<p>The important caveat is that causal forests require experimental or quasi-experimental variation to identify causal effects. They do not solve the selection problem. Applied to observational data without a credible source of exogenous variation, they will estimate heterogeneity in the association between treatment and outcome, which may reflect confounding rather than causation. The method is powerful, but it is not magic.</p>
-
-<h2>The Philosophy of Identification</h2>
-
-<p>What unites all of these methods is that each one trades a set of untestable assumptions for a causal estimate. Parallel trends, convex hull membership, exclusion restrictions, honesty in tree splitting. These are not technical details. They are substantive claims about the world that require domain expertise to evaluate. No amount of methodological sophistication compensates for a bad identifying assumption.</p>
-
-<p>This has two practical implications. First, the strongest evidence for a causal claim comes from triangulation. If a DiD analysis, a synthetic control analysis, and an instrumental variables analysis all point in the same direction, each relying on different assumptions, the probability that all three assumptions fail simultaneously in a way that produces the same spurious result is very low. Second, sensitivity analysis, systematically asking how large an unobserved confounder would need to be to overturn the conclusion, should be a mandatory component of any causal analysis. Rosenbaum's framework for sensitivity analysis and Liu, Kuramoto, and Stuart's accessible introduction to the topic provide the tools. Any researcher presenting causal estimates without sensitivity analysis is leaving the most important part of the argument unstated.</p>
-
-<p>The goal is not certainty. The goal is honest, transparent reasoning about what we know and what we are assuming, with the technical machinery deployed in service of that reasoning rather than as a substitute for it.</p>
-
-<div class="refs">
-<h3>References</h3>
-<ol>
-<li>Abadie, A. (2021). "Using Synthetic Controls." <em>Journal of Economic Literature</em>, 59(2), 391–425.</li>
-<li>Abadie, A., Diamond, A., and Hainmueller, J. (2010). "Synthetic Control Methods for Comparative Case Studies." <em>JASA</em>, 105(490), 493–505.</li>
-<li>Arkhangelsky, D., Athey, S., Hirshberg, D. A., Imbens, G. W., and Wager, S. (2021). "Synthetic Difference-in-Differences." <em>AER</em>, 111(12), 4088–4118.</li>
-<li>Athey, S. and Wager, S. (2018). "Estimation and Inference of Heterogeneous Treatment Effects Using Random Forests." <em>JASA</em>, 113(523), 1228–1242.</li>
-<li>Callaway, B. and Sant'Anna, P. H. C. (2021). "Difference-in-Differences with Multiple Time Periods." <em>Journal of Econometrics</em>, 225(2), 200–230.</li>
-<li>Goodman-Bacon, A. (2021). "Difference-in-Differences with Variation in Treatment Timing." <em>Econometrica</em>, 89(5), 2261–2290.</li>
-<li>Liu, W., Kuramoto, S. J., and Stuart, E. A. (2013). "An Introduction to Sensitivity Analysis for Unobserved Confounding." <em>Prevention Science</em>, 14, 570–580.</li>
-<li>Rosenbaum, P. R. (2002). <em>Observational Studies</em>. 2nd ed. Springer.</li>
-<li>Rubin, D. B. (1974). "Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies." <em>Journal of Educational Psychology</em>, 66(5), 688–701.</li>
-<li>Wager, S. and Athey, S. (2018). "Estimation and Inference of Heterogeneous Treatment Effects Using Random Forests." <em>JASA</em>, 113(523), 1228–1242.</li>
-</ol>
-</div>
-</div>
-</article>
-
-<!-- POST 3 -->
-<article class="post" id="post3">
-<span class="back" onclick="showMain()">← Back</span>
-<div class="meta">November 2024</div>
-<h1>Discrete Time, Discrete Auctions</h1>
-<div class="body">
-
-<p>There is an interesting structural alignment between two ideas that developed in different literatures. In market microstructure, Budish, Cramton, and Shim proposed frequent batch auctions as an alternative to continuous trading, arguing that discretizing time eliminates the latency arms race while preserving price discovery. In optimal execution, Model Predictive Control and dynamic programming approaches discretize time into decision epochs, solving a finite-horizon optimization at each step. This essay argues that the alignment is not coincidental, that periodic batch auctions are, in a precise sense, the market structure that optimal execution theory was always implicitly assuming.</p>
-
-<p>I find this connection interesting because it suggests that a large portion of the complexity in the optimal execution literature is not intrinsic to the execution problem but is instead an artifact of the continuous limit order book. If you change the market structure, many of the hard problems become easy, and some of the easy problems become irrelevant.</p>
-
-<h2>The Budish-Cramton-Shim Argument</h2>
-
-<p>The core empirical finding is that correlations between related financial instruments break down at sufficiently high frequencies. Using data on the E-mini S&P 500 futures and the SPDR S&P 500 ETF, Budish, Cramton, and Shim showed that the correlation between these near-identical instruments was essentially zero at the millisecond level, reaching 0.50 only at intervals of roughly 142 milliseconds by 2011. This breakdown is not a market failure to be corrected. It is a structural feature of a system in which each instrument trades continuously on its own separate order book.</p>
-
-<p>The implication is that continuous markets create mechanical arbitrage opportunities. Because prices of correlated instruments cannot move at literally the same instant, there is always a brief window during which one price has updated and the other has not. The trader who detects this discrepancy fastest wins the arbitrage. The authors computed that the total prize in just the ES-SPY race averaged $75 million per year, and that is just one of thousands of highly correlated pairs.</p>
-
-<p>Frequent batch auctions eliminate this opportunity by design. If all instruments clear simultaneously at discrete intervals, there is no window during which one price has updated and another has not. The race is replaced by a competition on price. The trader who values the asset most accurately wins, regardless of speed. The welfare properties of a batch auction converge to those of the continuous market as the batch interval shrinks, while the arms-race incentives vanish for any positive batch interval.</p>
-
-<h2>Why This Matters for Execution</h2>
-
-<p>In the Almgren-Chriss framework, the execution horizon is divided into N periods of length τ, and the trader chooses a quantity to trade in each period. The period length τ is a free parameter, chosen for computational convenience, not derived from any feature of the market. In a continuous limit order book, this discretization is artificial. The real market operates in continuous time, and the trader can submit orders at any instant. The discrete periods are an approximation.</p>
-
-<p>In a periodic batch auction with interval τ, the discretization is not artificial. It is a physical feature of the market. The trader cannot trade more frequently than once per batch interval, because trades only occur when the batch clears. The decision epochs in the optimal execution model coincide exactly with the clearing events in the market. The discrete model is not an approximation. It is the correct description of the problem.</p>
-
-<p>This has several consequences that I think are underappreciated.</p>
-
-<p>First, the timing problem disappears. In continuous markets, the optimal execution problem has two dimensions. How much to trade at each decision point, and when to trade. The "when" dimension is what makes adaptive execution difficult. The trader must decide whether to wait for better conditions or act now, and this decision depends on a forecast of future liquidity that is inherently uncertain. In a batch auction, you trade at every clearing, period. The only decision is how much and at what price.</p>
-
-<p>Second, the state transition is well-defined. In continuous markets, the state of the order book evolves continuously between trades, and the state at the time of your next order depends on all the intervening activity by other participants. This makes the state transition function stochastic and high-dimensional. In a batch auction, the state at auction t depends on the clearing outcome at auction t minus one and whatever information arrived between clearings. The intra-interval dynamics are irrelevant to the trader's decision.</p>
-
-<p>Third, impact is a clearing-level phenomenon rather than an order-level phenomenon. In continuous markets, the impact of a trade depends on the instantaneous state of the order book, how much depth is available at the best quotes, how quickly new liquidity arrives to fill the gap. In a batch auction, impact is a function of the aggregate demand and supply submitted to the batch. Your buy order is offset against sell orders from other participants, and the clearing price reflects the net demand, not the sequence in which orders arrived. This netting effect reduces the effective market impact for any individual trader by allowing offsetting demand to cancel out before prices adjust.</p>
-
-<h2>MPC as the Natural Execution Framework</h2>
-
-<p>Model Predictive Control is a methodology where, at each decision epoch, the controller solves a finite-horizon optimization, applies the first control action, observes the resulting state, and re-solves. It was developed for industrial process control and has become the dominant approach in robotics and autonomous systems.</p>
-
-<p>The fit with periodic auctions is structural. At each auction epoch, observe the state (remaining shares, market conditions). Looking ahead some number of epochs, compute the quantity and price that minimizes expected cost plus risk, subject to constraints like a completion deadline and maximum participation rate. Submit the first-epoch quantity to the batch auction. Observe the fill. Update state. Repeat.</p>
-
-<p>The receding horizon naturally handles forecast uncertainty. The controller does not need an accurate forecast of liquidity far into the future, because it will re-solve at the next epoch with updated information. The planning horizon controls the tradeoff between myopic optimization, ignoring future consequences, and fully forward-looking optimization, considering the entire remaining schedule. In practice, a horizon of five to twenty epochs is sufficient for most objectives, because the conditional value of information decays rapidly beyond a few time steps.</p>
-
-<h2>The Economics of the Batch Interval</h2>
-
-<p>The choice of batch interval has economic content. It is a design parameter analogous to the tick size. It shapes the incentives of participants, the quality of price discovery, and the distribution of surplus between speed-sensitive and price-sensitive traders.</p>
-
-<p>Highly liquid, frequently traded assets can support shorter intervals, more auctions per second, while less liquid assets benefit from longer intervals that allow more orders to accumulate. Kalay, Wei, and Wohl showed empirically in 2002 that traders prefer immediacy. They will accept worse prices to trade now rather than waiting for a periodic clearing. This preference is rational if the cost of waiting, the risk of adverse price movement, exceeds the benefit of improved price discovery from batching. The optimal batch interval equates these marginal costs and benefits.</p>
-
-<p>Getting the interval right requires empirical measurement. Fitting theoretical models to observed trading patterns. Running counterfactual simulations. Measuring the sensitivity of welfare outcomes to changes in the design parameter. This is exactly the kind of work that data science at scale can provide, and it connects market design to the same toolkit of causal inference and statistical measurement that is used in product development at technology companies. The problems are different in their details but structurally similar in what they demand from the analyst.</p>
-
-<h2>Closing Thought</h2>
-
-<p>The theoretical argument for periodic batch auctions is usually made on grounds of market quality. They eliminate the speed arms race, improve price discovery, and reduce transaction costs through netting. But I think there is an equally compelling argument from the perspective of the trader's optimization problem. Periodic auctions provide the natural decision structure that execution algorithms have always assumed. The discrete time periods are not a modeling convenience but a physical feature of the market. The clearing mechanism provides a well-defined state transition. Much of the optimal execution literature has been solving problems that are artifacts of the continuous market design rather than fundamental features of the execution problem itself. Changing the market structure does not just improve outcomes. It simplifies the problem.</p>
-
-<div class="refs">
-<h3>References</h3>
-<ol>
-<li>Almgren, R. (2003). "Optimal Execution with Nonlinear Impact Functions." <em>Applied Mathematical Finance</em>, 10, 1–18.</li>
-<li>Budish, E., Cramton, P., and Shim, J. (2015). "The High-Frequency Trading Arms Race." <em>QJE</em>, 130(4), 1547–1621.</li>
-<li>Garcia, C. E., Prett, D. M., and Morari, M. (1989). "Model Predictive Control." <em>Automatica</em>, 25(3), 335–348.</li>
-<li>Jusselin, P., Mastrolia, T., and Rosenbaum, M. (2021). "Optimal Auction Duration." Working Paper.</li>
-<li>Kalay, A., Wei, L., and Wohl, A. (2002). "Continuous Trading or Call Auctions." <em>Journal of Finance</em>, 57(1), 523–542.</li>
-<li>Parkes, D. C. (2006). <em>Iterative Combinatorial Auctions</em>. MIT Press.</li>
-</ol>
-</div>
-</div>
-</article>
-
-<!-- POST 4 -->
-<article class="post" id="post4">
-<span class="back" onclick="showMain()">← Back</span>
-<div class="meta">October 2024</div>
-<h1>A Practitioner's Guide to Not Lying with Standard Errors</h1>
-<div class="body">
-
-<p>In any measurement system, whether you are evaluating execution quality in financial markets, latency in an inference pipeline, or conversion rates in a product funnel, you eventually need to reduce a large and heterogeneous dataset to a summary statistic with a confidence interval. The summary statistic gets reported to stakeholders, compared across periods, and used to make decisions. If the confidence interval is too wide, the estimate is uninformative. If it is too narrow, decisions get made on the basis of spurious precision. Getting the interval right is, in a very real sense, the entire point of the measurement exercise.</p>
-
-<p>I write about this because I think the problem is both underappreciated and practically consequential. Most applied data science operates in settings with hierarchical data, observations nested within groups, and the default tools, computing a mean and dividing the standard deviation by the square root of n, are actively misleading in these settings. The fix is not difficult. But it requires understanding why the naive approach fails.</p>
-
-<h2>The Problem with Pooling</h2>
-
-<p>Suppose you want to estimate the average latency of an API endpoint across all users over the past week. You have one million individual request-level measurements. The naive approach is to compute the sample mean and the standard error as the standard deviation divided by the square root of one million. The standard error will be tiny, and the confidence interval will be razor-thin.</p>
-
-<p>But this treats each request as an independent observation, which it is not. Requests from the same user are correlated because some users have fast connections and others do not. Requests on the same day are correlated because infrastructure load varies over time. Requests for the same model are correlated because some models are inherently slower. The effective sample size, the number of truly independent pieces of information in your data, is much smaller than one million. The true standard error, accounting for within-cluster correlation, can be three to ten times larger than the naive estimate.</p>
-
-<p>This is not a theoretical concern. Bertrand, Duflo, and Mullainathan showed in 2004 that ignoring serial correlation in difference-in-differences designs leads to dramatic over-rejection of the null hypothesis. Studies that use naive standard errors find "significant" effects at rates far exceeding the nominal five percent level. Moulton showed in 1990 that the same phenomenon arises when individual-level outcomes are regressed on group-level treatments. The bias is proportional to the intra-cluster correlation and the cluster size, and in typical settings with moderate cluster sizes it is large enough to turn genuinely null results into apparently significant ones.</p>
-
-<p>Cameron and Miller survey the extensive econometrics literature on cluster-robust inference in their 2015 practitioner's guide and document case after case where naive standard errors are off by an order of magnitude. The general principle is that standard errors must account for the dependence structure of the data. If you ignore dependence and pretend observations are independent, you will systematically overstate the precision of your estimates.</p>
-
-<h2>Why Weighting Matters</h2>
-
-<p>Now add a complication. Not all observations are equally important. In financial markets, a one-basis-point price improvement on a ten-million-dollar institutional order is more economically meaningful than the same improvement on a five-hundred-dollar retail trade. In product analytics, a latency regression that affects your top enterprise customer matters more than one affecting a trial account. In both cases, you want a weighted mean, where each observation's contribution is proportional to some measure of its importance.</p>
-
-<p>The weighted mean itself is straightforward. Sum each observation times its weight, divide by the sum of weights. But computing its standard error requires care, because the purpose of the weights changes the formula. Frequency weights, where the weight represents the number of identical observations aggregated into one row, are different from importance weights, where the weight represents how much you care about each observation, which are different from sampling weights, where the weight corrects for unequal probability of inclusion in the sample. Getting this wrong produces nonsensical confidence intervals, and the most common mistake is treating importance weights as if they were frequency weights, which dramatically understates the standard error.</p>
-
-<h2>Multi-Level Aggregation</h2>
-
-<p>The cleanest way to handle hierarchical data is to aggregate in stages that respect the nesting structure.</p>
-
-<p>At the first level, within each lowest-level group such as trades within a symbol-date cell, compute the weighted mean and weighted standard error. This captures within-group variation.</p>
-
-<p>At the second level, across groups within the next level such as across symbols within a date, compute the weighted mean of the first-level means, weighting by each group's total weight. Propagate the first-level standard errors by taking a weighted average of the standard errors, a form of meta-analytic pooling following DerSimonian and Laird's 1986 methodology.</p>
-
-<p>At the third level, repeat for the next level of the hierarchy such as across dates. Same procedure. Weighted mean of the second-level means, with standard errors propagated from the second level.</p>
-
-<p>The resulting final standard error reflects the within-group uncertainty at the lowest level, propagated upward through the hierarchy. This approach is computationally simple, each level is just a group-by and aggregate operation. It is interpretable, because the standard error at each level has a clear source. And it is conservative, tending to produce wider intervals than naive pooling, which is the honest direction to err.</p>
-
-<h2>The Connection to Meta-Analysis</h2>
-
-<p>This multi-level procedure is closely related to meta-analysis, the statistical methodology for combining estimates from multiple studies. In a meta-analysis, each study provides an estimate and a standard error, and the combined estimate is a weighted average across studies with weights proportional to each study's precision.</p>
-
-<p>The classic distinction is between fixed-effect and random-effects meta-analysis. In a fixed-effect model, all studies estimate the same underlying parameter, and variation across studies is due entirely to sampling noise. In a random-effects model, there is genuine heterogeneity across studies, each study estimates a different but related parameter, and the combined estimate targets the mean of the distribution.</p>
-
-<p>The random-effects model produces wider confidence intervals because it accounts for between-study heterogeneity in addition to within-study sampling error. This is directly analogous to our problem. If different stocks or users or days have genuinely different underlying parameters, the standard error of the aggregate estimate must account for this heterogeneity. Multi-level aggregation with standard error propagation is an approximation to the random-effects model that is computationally simpler and does not require specifying a distributional form for the between-group heterogeneity.</p>
-
-<h2>Practical Diagnostics</h2>
-
-<p>How do you know if your standard errors are honest? There are several diagnostics.</p>
-
-<p>Compare naive to clustered standard errors. If the cluster-robust standard error is substantially larger than the naive one, say more than two times larger, there is important within-cluster correlation that the naive approach ignores. The ratio is a measure of the design effect, the factor by which the effective sample size is reduced due to clustering.</p>
-
-<p>Plot the group-level estimates. If you are aggregating across stocks, plot each stock's estimate with its individual confidence interval. If there is substantial between-stock variation, your aggregate standard error needs to account for this heterogeneity. If the estimates are tightly clustered, the within-stock variation dominates and the choice of method matters less.</p>
-
-<p>Compute the effective sample size. The formula is the total number of observations divided by one plus the product of the average cluster size minus one and the intra-cluster correlation. If the intra-cluster correlation is 0.05 and the average cluster has 100 observations, the effective sample size is roughly one sixth of the total, six times fewer independent observations than the raw count suggests. Report this alongside the raw count so that readers understand the true precision.</p>
-
-<h2>Why This Matters</h2>
-
-<p>The temptation to report artificially precise estimates is real. Narrow confidence intervals look good in presentations, imply strong conclusions, and make decisions feel easy. But they are lies that lead to overconfident decisions, failed replications, and eroded trust in the measurement system. An honest interval that says "we are not sure" is more valuable than a dishonest one that says "we know."</p>
-
-<p>The fix is not difficult. Aggregate in stages. Weight by economic significance. Propagate uncertainty through each stage. These are standard techniques in econometrics and meta-analysis. They are underused in applied data science, where the emphasis is often on point estimates and dashboards rather than on the uncertainty that gives those estimates their meaning.</p>
-
-<p>Measurement without honest uncertainty quantification is not measurement. It is marketing.</p>
-
-<div class="refs">
-<h3>References</h3>
-<ol>
-<li>Bertrand, M., Duflo, E., and Mullainathan, S. (2004). "How Much Should We Trust Differences-in-Differences Estimates?" <em>QJE</em>, 119(1), 249–275.</li>
-<li>Cameron, A. C. and Miller, D. L. (2015). "A Practitioner's Guide to Cluster-Robust Inference." <em>Journal of Human Resources</em>, 50(2), 317–372.</li>
-<li>DerSimonian, R. and Laird, N. (1986). "Meta-Analysis in Clinical Trials." <em>Controlled Clinical Trials</em>, 7(3), 177–188.</li>
-<li>Moulton, B. R. (1990). "An Illustration of a Pitfall in Estimating the Effects of Aggregate Variables on Micro Units." <em>Review of Economics and Statistics</em>, 72(2), 334–338.</li>
-<li>Angrist, J. D. and Pischke, J.-S. (2009). <em>Mostly Harmless Econometrics</em>. Princeton University Press.</li>
-<li>Gelman, A. and Hill, J. (2007). <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Cambridge University Press.</li>
-</ol>
-</div>
-</div>
-</article>
-
-<!-- POST 5 -->
-<article class="post" id="post5">
-<span class="back" onclick="showMain()">← Back</span>
-<div class="meta">September 2024</div>
-<h1>Kyle's Lambda and the Meaning of Price Discovery</h1>
-<div class="body">
-
-<p>Albert Kyle's 1985 paper "Continuous Auctions and Insider Trading" is one of those rare contributions that defines the vocabulary of an entire field. It introduced a single parameter, λ, that captures the sensitivity of price to order flow, and in doing so gave market microstructure a language for talking about the relationship between trading and information. I keep returning to this paper not because it is the most empirically realistic model of trading, it is not, but because it clarifies what we mean when we say "price discovery" in a way that most subsequent work takes for granted.</p>
-
-<h2>The Setup</h2>
-
-<p>Kyle's model has three types of participants. An informed trader who knows the true value of the asset. A collection of noise traders who trade randomly for reasons unrelated to the asset's value (liquidity needs, portfolio rebalancing, hedging). And a market maker who sets the price.</p>
-
-<p>The market maker cannot distinguish between informed and uninformed order flow. She observes the total signed order flow, the sum of all buy and sell orders, but cannot tell which orders come from the informed trader and which from noise traders. Her problem is to set a price that correctly reflects the information revealed by the aggregate order flow.</p>
-
-<p>Kyle showed that in equilibrium, the market maker sets the price as a linear function of order flow. The price moves by λ for each unit of net order flow, where λ is the ratio of the variance of the informed trader's order to the total variance of order flow (informed plus noise). This is Kyle's lambda. It measures how much each unit of order flow moves the price, and it has a beautiful interpretation. It is the amount of information per unit of trading volume.</p>
-
-<h2>What Lambda Actually Measures</h2>
-
-<p>There is a tendency in applied work to treat λ as simply a measure of liquidity. When λ is high, prices are sensitive to order flow, meaning trading moves the price a lot, which feels illiquid. When λ is low, prices are insensitive to order flow, which feels liquid. This is correct as far as it goes. But it misses the deeper point.</p>
-
-<p>Lambda is high when there is a lot of information in the order flow. This happens when the informed trader is aggressive (trading large quantities) or when noise trading is low (so the informed trader's orders are not well-camouflaged). Lambda is low when there is little information in the order flow, either because the informed trader is cautious or because noise trading is high.</p>
-
-<p>This means that liquidity and information are inextricably linked. A market with very low λ is liquid in the sense that you can trade large quantities without moving the price, but it is also a market where prices do not incorporate information quickly. A market with very high λ is illiquid, but it is also a market where prices respond strongly to new information. These are not separate phenomena. They are the same phenomenon viewed from different angles.</p>
-
-<p>The practical implication is that you cannot improve liquidity, in the sense of reducing price sensitivity to order flow, without also reducing the speed of price discovery. Any mechanism that reduces λ, such as adding noise to the order flow, increasing the batch interval in a call auction, or subsidizing uninformed trading, will simultaneously make it cheaper to trade and slower for prices to reflect fundamentals. This is a tradeoff, not a problem to be solved.</p>
-
-<h2>The Informed Trader's Strategy</h2>
-
-<p>One of the most elegant results in Kyle's paper is the optimal strategy for the informed trader. The informed trader knows the true value and wants to maximize profit, which means buying when the price is below true value and selling when it is above. But she also knows that her trading will move the price, so she must trade cautiously to avoid revealing her information too quickly.</p>
-
-<p>In equilibrium, the informed trader trades at a rate proportional to the gap between the true value and the current price. She trades aggressively when the mispricing is large and cautiously as the price converges to true value. The result is that information is incorporated into prices gradually over the course of the trading session, not all at once. The informed trader "manages" the release of information, stretching it over time to maximize her profit.</p>
-
-<h2>Price Discovery as a Measurement Problem</h2>
-
-<p>Kyle's framework also clarifies what it means to measure price discovery. If the market maker correctly infers the information content of order flow and adjusts the price accordingly, the price converges to the true value over the trading session. The speed of this convergence depends on λ. Higher λ means faster convergence but also higher trading costs for everyone including uninformed traders who move the price simply by expressing their liquidity needs.</p>
-
-<p>In practice, we never observe the "true value" of an asset. We can only observe the price trajectory and the order flow, and from these try to infer how efficiently prices are incorporating information. The standard approach is to measure price efficiency using variance ratios, which compare the variance of returns at short and long horizons. If prices follow a random walk, the variance of returns over k periods should be k times the variance of returns over one period. Deviations from this, either excess variance at short horizons (suggesting overreaction) or insufficient variance (suggesting underreaction), indicate departures from efficient price discovery.</p>
-
-<p>But this is a blunt tool. Kyle's model suggests a more precise approach. Estimate λ from the relationship between order flow and price changes, and compare it to the theoretical value implied by the model's equilibrium. If the empirical λ is higher than the theoretical value, the market maker is being too cautious, overweighting the possibility of informed trading, and prices are overreacting to order flow. If the empirical λ is lower, the market maker is underweighting information, and prices are underreacting.</p>
-
-<p>This kind of structural estimation, where you fit a theoretical model's parameters to observed data and then ask whether the fitted model is internally consistent, is the bridge between microstructure theory and empirical measurement. It is more demanding than reduced-form analysis because it requires committing to a model. But it is also more informative because the model's predictions are testable.</p>
-
-<h2>What the Model Gets Wrong, and Why It Is Still Useful</h2>
-
-<p>Kyle's model has a single informed trader with perfect information, a linear impact function, and Gaussian noise trading. None of these are literally true. Real markets have many partially informed traders with heterogeneous signals. Impact functions are nonlinear. Noise trading has fat tails and time-varying intensity. Forty years of subsequent research has relaxed each of these assumptions in various combinations.</p>
-
-<p>But the core insight, that the price sensitivity to order flow is a joint measure of liquidity and informational efficiency, is robust to all of these extensions. It is one of those ideas that, once stated, seems obvious, but before Kyle stated it, the literature treated liquidity and information as separate topics. The parameter λ unified them, and that unification is permanent regardless of which specific functional form or distributional assumption turns out to be most empirically accurate.</p>
-
-<p>There is a lesson here about the role of simple models in quantitative research. The goal is not to describe every feature of reality. The goal is to identify the right tradeoffs, to name the forces that are in tension, and to provide a framework within which empirical evidence can be organized. Kyle's model does this as well as any paper in economics.</p>
-
-<div class="refs">
-<h3>References</h3>
-<ol>
-<li>Kyle, A. S. (1985). "Continuous Auctions and Insider Trading." <em>Econometrica</em>, 53(6), 1315–1335.</li>
-<li>Glosten, L. and Milgrom, P. (1985). "Bid, Ask and Transaction Prices in a Specialist Market with Heterogeneously Informed Traders." <em>Journal of Financial Economics</em>, 14, 71–100.</li>
-<li>Easley, D. and O'Hara, M. (1987). "Price, Trade Size, and Information in Securities Markets." <em>Journal of Financial Economics</em>, 19(1), 69–90.</li>
-<li>Hasbrouck, J. (1991). "Measuring the Information Content of Stock Trades." <em>Journal of Finance</em>, 46(1), 179–207.</li>
-<li>O'Hara, M. (1995). <em>Market Microstructure Theory</em>. Blackwell.</li>
-<li>Back, K. (1992). "Insider Trading in Continuous Time." <em>Review of Financial Studies</em>, 5(3), 387–409.</li>
-</ol>
-</div>
-</div>
-</article>
-
-<!-- POST 6 -->
-<article class="post" id="post6">
-<span class="back" onclick="showMain()">← Back</span>
-<div class="meta">August 2024</div>
-<h1>The Counterfactual Problem in Execution Quality</h1>
-<div class="body">
-
-<p>Execution quality measurement has a fundamental problem that most of the industry treats as a technicality rather than the deep conceptual issue it actually is. The problem is this. You executed a trade at a certain price. Was that price good? To answer, you need to know what price you would have gotten if you had traded differently, at a different time, on a different venue, in a different size. But you did not trade differently. You traded the way you traded, and the counterfactual is unobserved.</p>
-
-<p>This is exactly the fundamental problem of causal inference, restated in the language of trading. The Rubin causal model defines the treatment effect as the difference between the outcome under treatment and the outcome under control, and observes that for any individual unit, you can observe at most one of these two outcomes. The unobserved outcome is the counterfactual. In execution quality measurement, the "treatment" is the execution strategy you chose, the "outcome" is the price you got, and the "counterfactual" is the price you would have gotten under a different strategy. You never observe both.</p>
-
-<p>I think this framing is important because it exposes the hidden assumptions in every execution benchmark, and it suggests that the tools of causal inference, which have been developed with great rigor over the past several decades, should be brought to bear on execution measurement more seriously than they currently are.</p>
-
-<h2>The Benchmark Problem</h2>
-
-<p>The most common execution benchmarks in equity markets are arrival price, VWAP, and the closing price. Each is a proxy for the counterfactual, an estimate of what the price "would have been" in some hypothetical scenario.</p>
-
-<p>Arrival price, also called the implementation shortfall benchmark, compares the execution price to the midpoint at the time the order was first submitted. The idea is that the midpoint at arrival represents the "fair" price before the trader's activity began to move the market. The difference between execution price and arrival midpoint captures the total cost of execution, including market impact and timing slippage.</p>
-
-<p>But what does arrival price actually measure? It measures the price change between order arrival and execution, which includes the trader's own impact but also any price movement that would have occurred regardless, general market drift, news events, sector rotation. To interpret arrival price as the cost of execution, you need to assume that the price would have stayed at the arrival midpoint if you had not traded. This is rarely true. In a trending market, a patient buyer who waits will face higher prices regardless of their own impact, and the arrival benchmark will attribute this to execution cost even though the cost is really opportunity cost of not trading faster.</p>
-
-<p>VWAP, the volume-weighted average price, compares the execution price to the average price at which all market participants traded during the execution window. Beating VWAP means you got a better price than the average participant. But the average participant includes you. If you are a large fraction of the day's volume, your own trades contribute to the VWAP calculation, making it almost impossible to beat. And if you are a small fraction, VWAP is mostly a measure of how well you timed your trades relative to intraday price movements, which may have nothing to do with the quality of your execution strategy.</p>
-
-<p>Both benchmarks have a deeper problem. They are defined relative to prices that are themselves affected by the trader's activity. The arrival midpoint may already reflect anticipation of the order if there is information leakage. The VWAP is mechanically affected by the order's own trades. Neither benchmark provides a clean counterfactual in the Rubin sense, because neither tells you what the price would have been in the absence of the trade.</p>
-
-<h2>Markouts as Causal Estimates</h2>
-
-<p>Markout analysis, measuring the midpoint movement after a trade, is the closest thing the industry has to a causal estimate of execution quality. The idea is simple. If you bought at a price and the midpoint subsequently rises, you bought at a good price, and the midpoint movement validates your execution. If the midpoint subsequently falls, you bought too expensively, and the decline measures the information disadvantage you suffered.</p>
-
-<p>But markouts are only valid as a measure of execution quality under specific assumptions that are rarely stated. The key assumption is that the midpoint after the trade converges to the "true" post-trade value of the asset, so that the markout measures the difference between your execution price and this true value. For this to work, you need the post-trade midpoint to be unbiased, meaning it should not systematically overreact or underreact to the trade. If there is transient impact that has not decayed by the markout horizon, the midpoint is still displaced from the true value, and the markout will understate the true execution cost. If the trade triggered momentum or further information revelation, the midpoint may overshoot, and the markout will overstate the cost.</p>
-
-<p>Choosing the markout horizon is itself a causal inference problem. Too short, and transient impact contaminates the estimate. Too long, and subsequent news unrelated to the trade contaminates the estimate. There is a Goldilocks zone where the transient impact has decayed but the subsequent noise has not yet accumulated, and finding this zone requires understanding the dynamics of impact decay for the specific asset and market conditions.</p>
-
-<h2>What Would a Proper Counterfactual Look Like</h2>
-
-<p>The causal inference literature suggests several approaches to constructing better counterfactuals for execution quality.</p>
-
-<p>One approach is matching. For each executed trade, find a set of "control" trades in the same stock around the same time that were executed on different venues or with different strategies, and compare outcomes. The identifying assumption is that the matched trades are similar enough on observable characteristics that differences in outcomes can be attributed to the strategy or venue rather than to selection. This is the logic behind TCA (Transaction Cost Analysis) systems that compare a fund's execution to a peer universe. But the selection problem is severe. Funds that choose to trade on a particular venue or with a particular strategy do so for reasons that may be correlated with execution outcomes. A venue that attracts large institutional orders in volatile markets will look worse on simple comparisons even if it provides superior execution conditional on the difficulty of the orders it handles.</p>
-
-<p>A second approach is synthetic controls, constructing a counterfactual from a weighted combination of trades that did not use the strategy of interest but match the pre-trade characteristics of the trade that did. This is Abadie's synthetic control method applied to trading. The challenge is that the "pre-treatment" covariates, things like stock volatility, spread, depth, time of day, and order urgency, may not fully capture the selection mechanism, and the convex hull constraint limits how different the synthetic control can be from any individual donor trade.</p>
-
-<p>A third approach, and the one I find most promising conceptually, is to think about execution quality measurement as a form of off-policy evaluation from the reinforcement learning literature. The execution strategy is a policy that maps market states to actions (submit, wait, cancel, modify). The counterfactual question is what would the outcome have been under a different policy. Off-policy evaluation methods, including importance sampling and doubly robust estimators, provide tools for estimating the value of an unobserved policy using data generated by an observed policy, under the assumption that the observed policy provides sufficient coverage of the state-action space.</p>
-
-<p>This is a harder problem than standard causal inference because the execution strategy generates a sequence of actions over time rather than a single treatment. Each action affects the state, which affects subsequent actions and outcomes. The full counterfactual is not "what if I had traded at a different price" but "what if I had followed a completely different strategy, and how would the entire sequence of market states have unfolded differently." This is a sequential decision problem, and the counterfactual involves an entire trajectory, not just a single number.</p>
-
-<h2>Why This Matters</h2>
-
-<p>The practical consequence of the counterfactual problem is that most execution quality comparisons are unreliable. When a broker claims they achieve 2 basis points of price improvement versus the NBBO, that claim depends on the benchmark, the selection of trades included in the sample, and unstated assumptions about the counterfactual. Two brokers can both honestly claim superior execution quality using different benchmarks and different universes of trades. The claims are not necessarily contradictory, they are just answering different questions, but they are presented as if they answer the same question, and this is misleading.</p>
-
-<p>The deeper issue is that execution quality is not a fixed property of a venue or a strategy. It is a conditional property that depends on the market state, the order characteristics, and the behavior of other participants. A venue that provides excellent execution for small retail orders in liquid names may provide poor execution for large institutional orders in illiquid names. Aggregating across these heterogeneous contexts into a single number is exactly the kind of pooling problem I discussed in the standard errors essay, except that the stakes are higher because the number is used to allocate billions of dollars of order flow.</p>
-
-<p>The solution is not to abandon benchmarks. We need summary statistics to make decisions. The solution is to treat execution measurement with the same rigor that the causal inference literature applies to treatment effect estimation. State your identifying assumptions. Report sensitivity analyses. Disaggregate by the covariates that matter. And be honest about what the data can and cannot tell you about the counterfactual.</p>
-
-<div class="refs">
-<h3>References</h3>
-<ol>
-<li>Rubin, D. B. (1974). "Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies." <em>Journal of Educational Psychology</em>, 66(5), 688–701.</li>
-<li>Abadie, A., Diamond, A., and Hainmueller, J. (2010). "Synthetic Control Methods for Comparative Case Studies." <em>JASA</em>, 105(490), 493–505.</li>
-<li>Hasbrouck, J. (2007). <em>Empirical Market Microstructure</em>. Oxford University Press.</li>
-<li>Perold, A. F. (1988). "The Implementation Shortfall." <em>Journal of Portfolio Management</em>, 14(3), 4–9.</li>
-<li>Madhavan, A. (2000). "Market Microstructure." <em>Journal of Financial Markets</em>, 3(3), 205–258.</li>
-<li>Dudík, M., Langford, J., and Li, L. (2011). "Doubly Robust Policy Evaluation and Learning." <em>Proceedings of the 28th ICML</em>.</li>
-</ol>
-</div>
-</div>
-</article>
-
-<!-- POST 7 -->
-<article class="post" id="post7">
-<span class="back" onclick="showMain()">← Back</span>
-<div class="meta">July 2024</div>
-<h1>Expressiveness, Complexity, and the Limits of Preference Elicitation</h1>
-<div class="body">
-
-<p>Combinatorial auctions let bidders say more about what they want. Instead of submitting a price for each item independently, a bidder can submit a price for a bundle of items, expressing the fact that the items are worth more together than separately. This is natural in many settings. A spectrum bidder wants licenses in adjacent frequencies, not random scattered bands. An advertiser wants a package of impressions across complementary placements, not impressions chosen independently. A trader executing a pairs strategy wants both legs filled simultaneously, not one at a time.</p>
-
-<p>But richer bidding languages create harder computational problems. The winner determination problem, finding the allocation that maximizes total welfare given all the bids, is NP-hard in general. The mechanism design problem, ensuring that bidders have incentives to report their true preferences, is constrained by impossibility results that limit what any mechanism can achieve. The practical question is how to navigate the tradeoff between expressiveness, letting bidders say what they actually want, and tractability, being able to compute and incentivize good outcomes.</p>
-
-<p>I find this tension interesting because it is one of the few places where theoretical computer science, economics, and practical system design intersect in ways that have immediate consequences. The impossibility results are not abstract. They constrain what real systems can do. And the algorithmic solutions are not purely theoretical. They determine whether an auction can clear in milliseconds or minutes.</p>
-
-<h2>The Value of Expressiveness</h2>
-
-<p>Why does expressiveness matter? Consider two items, A and B. A bidder values A alone at 5, B alone at 5, but the pair (A, B) together at 20. This is complementarity, the bundle is worth more than the sum of its parts. If the auction only allows independent bids on A and B, the bidder can bid at most 5 on each, and the auctioneer may allocate A and B to different bidders, destroying the complementary value. If the auction allows bundle bids, the bidder can bid 20 on the pair, and the auctioneer can recognize that allocating both items to this bidder generates more total value than splitting them.</p>
-
-<p>Complementarity is common. In spectrum auctions, the value of a frequency license depends on what other licenses you hold in adjacent bands. In financial markets, the value of a buy order in one stock depends on whether you simultaneously get a sell order in a correlated stock. In cloud computing, the value of a GPU allocation depends on whether you also get the memory and network bandwidth to utilize it. In all these cases, independent item-by-item bidding forces bidders to either understate their preferences, bidding conservatively on each item in case they do not win the complementary items, or overstate them, bidding aggressively and risking getting stuck with items whose value depends on complements they did not win. Neither is efficient.</p>
-
-<p>The theoretical result that motivates combinatorial auctions is that the welfare loss from independent bidding with complementarities can be arbitrarily large. Nisan showed examples where no equilibrium of independent item auctions achieves even a constant fraction of the optimal welfare. Bundle bidding eliminates this loss, at least in principle, by letting the auctioneer see the true value of bundles and allocate accordingly.</p>
-
-<h2>The Computational Problem</h2>
-
-<p>The winner determination problem in a combinatorial auction is to find the allocation of items to bidders that maximizes total value. This is a set packing problem and is NP-hard in the worst case. The number of possible bundles grows exponentially with the number of items, and the number of possible allocations grows even faster.</p>
-
-<p>In practice, the worst case is rarely encountered. Sandholm showed in 2002 that the CABOB algorithm, a branch-and-bound search with sophisticated pruning, can solve practically relevant instances of the winner determination problem in seconds. The key insight is that real-world bid structures have exploitable regularity. Bidders do not submit bids on all possible bundles. They submit bids on bundles that make economic sense, and these bundles have structure, overlapping items, nested bundles, natural clusters, that the search algorithm can exploit.</p>
-
-<p>Subsequent work has improved the computational tractability further. Linear programming relaxations provide tight upper bounds that prune large portions of the search tree. Special-purpose integer programming solvers exploit the specific structure of auction problems. Machine learning techniques have been applied to predict which branches of the search tree are most promising, further reducing computation time.</p>
-
-<p>But there is a deeper tension than raw computation time. Even if the winner determination problem can be solved efficiently for a given set of bids, the bidders themselves face a hard problem. They must evaluate their own preferences over exponentially many possible bundles, determine which bundles to bid on, and set prices for each. This is the preference elicitation problem, and it is in some ways harder than the winner determination problem because it requires the bidder to introspect on their own valuations rather than solve a well-defined optimization.</p>
-
-<h2>The Incentive Problem</h2>
-
-<p>Even if the computational problems are solved, there remains the question of incentives. Does the auction mechanism give bidders a reason to report their true preferences, or does it reward strategic misrepresentation?</p>
-
-<p>The Vickrey-Clarke-Groves mechanism, VCG, achieves truthfulness by charging each bidder the externality they impose on others. The price you pay equals the reduction in total welfare that others experience because you participated. Under VCG, truthful bidding is a dominant strategy, meaning it is optimal regardless of what other bidders do. This is a powerful property because it means bidders do not need to model each other's behavior, they can simply report their true values and trust the mechanism to handle the rest.</p>
-
-<p>But VCG has serious practical limitations. The payments can be very low, sometimes zero for large bidders, which creates revenue problems for the auctioneer. The mechanism is vulnerable to collusion, bidders can form coalitions that reduce their collective payments. And computing VCG payments requires solving the winner determination problem not just once but once for each bidder, to compute the counterfactual welfare without that bidder. This multiplies the computational cost.</p>
-
-<p>The Myerson-Satterthwaite impossibility theorem provides a fundamental limit. In bilateral trading with private values, there is no mechanism that is simultaneously efficient (allocates to the highest-value user), individually rational (nobody is forced to participate at a loss), and budget-balanced (the mechanism does not need external subsidies). You can have any two of these properties but not all three. This means that any practical mechanism must sacrifice something, either leaving some beneficial trades unexecuted, charging participants more than the efficient price, or requiring subsidy from the auctioneer.</p>
-
-<h2>Iterative Mechanisms</h2>
-
-<p>One response to both the computational and the preference elicitation challenges is to make the auction iterative. Instead of asking bidders to submit their complete preferences in a single round, an iterative auction proceeds through multiple rounds. In each round, bidders submit bids based on current prices, the auctioneer computes a tentative allocation, and prices are adjusted to reflect excess demand or supply. The process continues until an equilibrium is reached.</p>
-
-<p>Parkes described the theory of iterative combinatorial auctions in his 2006 monograph. The key advantage of iteration is that it reduces the elicitation burden on bidders. Instead of evaluating exponentially many bundles upfront, bidders only need to evaluate their preferences at the current prices, which is a much simpler cognitive and computational task. The mechanism guides bidders toward the efficient allocation through a sequence of increasingly refined signals about what other participants are willing to pay.</p>
-
-<p>The ascending proxy auction, developed by Ausubel and Milgrom in 2002, is the most studied iterative combinatorial mechanism. It combines the price discovery properties of an ascending auction with the expressiveness of combinatorial bidding. Bidders report their valuations for bundles, and the mechanism iteratively raises prices on over-demanded bundles and computes tentative allocations, converging to an approximately efficient outcome.</p>
-
-<h2>What This Means Outside Auctions</h2>
-
-<p>The expressiveness-complexity tradeoff is not unique to auctions. It appears in any system where agents must communicate preferences to a central planner.</p>
-
-<p>In resource allocation for computing infrastructure, jobs have complementary resource requirements, they need GPUs and memory and network bandwidth together, not independently. If the allocation system only accepts requests for individual resources, the same inefficiency that plagues independent-item auctions will arise. Jobs will either underrequest, getting incomplete resource bundles they cannot use, or overrequest, hoarding resources they might not need in case the complementary resources are not available.</p>
-
-<p>In product recommendation systems, user preferences have complementarity and substitutability. A user might want a comedy movie tonight but not two comedies, they are substitutes. Or they might want a movie and a restaurant reservation in the same neighborhood, they are complements. Simple rating-based systems treat each item independently, missing these interactions.</p>
-
-<p>In matching markets, workers have preferences over bundles of job attributes, salary plus location plus team plus role, and firms have preferences over bundles of worker attributes. Independent matching on each dimension misses the fact that a lower salary might be acceptable if the location is preferred, or that a less experienced candidate might be preferred if they have a specific complementary skill.</p>
-
-<p>In all these cases, the core tension is the same. Richer preference languages allow better outcomes but create harder computational and elicitation problems. The auction theory literature has spent forty years developing tools for navigating this tradeoff, including approximation algorithms, iterative mechanisms, and preference elicitation protocols. These tools have applications far beyond their original domain, and I think they are underappreciated in the broader computer science and data science communities.</p>
-
-<div class="refs">
-<h3>References</h3>
-<ol>
-<li>Cramton, P., Shoham, Y., and Steinberg, R., eds. (2006). <em>Combinatorial Auctions</em>. MIT Press.</li>
-<li>Nisan, N. (2006). "Bidding Languages for Combinatorial Auctions." In <em>Combinatorial Auctions</em>, MIT Press.</li>
-<li>Sandholm, T. (2002). "Algorithm for Optimal Winner Determination in Combinatorial Auctions." <em>Artificial Intelligence</em>, 135(1–2), 1–54.</li>
-<li>Parkes, D. C. (2006). <em>Iterative Combinatorial Auctions</em>. MIT Press.</li>
-<li>Ausubel, L. M. and Milgrom, P. (2002). "Ascending Auctions with Package Bidding." <em>Frontiers of Theoretical Economics</em>, 1(1).</li>
-<li>Myerson, R. B. and Satterthwaite, M. A. (1983). "Efficient Mechanisms for Bilateral Trading." <em>Journal of Economic Theory</em>, 29(2), 265–281.</li>
-<li>Vickrey, W. (1961). "Counterspeculation, Auctions, and Competitive Sealed Tenders." <em>Journal of Finance</em>, 16(1), 8–37.</li>
-<li>Clarke, E. H. (1971). "Multipart Pricing of Public Goods." <em>Public Choice</em>, 11(1), 17–33.</li>
-<li>Milgrom, P. (2004). <em>Putting Auction Theory to Work</em>. Cambridge University Press.</li>
-</ol>
-</div>
-</div>
-</article>
-
 <footer>© 2025 Adnan Contractor</footer>
-<script>
-function showPost(id) {
-  document.getElementById('main').classList.add('hidden');
-  document.querySelectorAll('.post').forEach(p => p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0, 0);
-}
-function showMain() {
-  document.querySelectorAll('.post').forEach(p => p.classList.remove('active'));
-  document.getElementById('main').classList.remove('hidden');
-}
-</script>
 </body>
 </html>
